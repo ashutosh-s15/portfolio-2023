@@ -689,11 +689,16 @@ h6 {
   filter: grayscale(100%);
 }
 
+.img-container {
+  display: none;
+}
+
 /* image slider */
 
 .main {
   width: 100%;
   height: 80vh;
+  overflow: hidden;
 }
 
 .slider,
@@ -725,6 +730,27 @@ h6 {
   background-size: cover;
   background-position: center;
   filter: grayscale(100%);
+}
+
+@media (max-width: 768px) {
+  .image {
+    background-size: cover;
+  }
+
+  .main {
+    display: none;
+  }
+
+  .img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .img-container img {
+    filter: grayscale(100%);
+    margin-bottom: 1em;
+  }
 }
 
 /*--------------- contact form --------------- */
