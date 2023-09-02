@@ -323,7 +323,7 @@ h6 {
 }
 
 .project1 {
-  background: url(./images/vage.png) no-repeat 10% 50%;
+  background: url(./images/vage.jpg) no-repeat 10% 50%;
   background-size: cover;
   filter: grayscale(100%);
 }
@@ -352,7 +352,7 @@ h6 {
 }
 
 .project2 {
-  background: url(./images/pink-road.png) no-repeat 70% 50%;
+  background: url(./images/pink-road-cover.jpg) no-repeat 70% 50%;
   background-size: cover;
   filter: grayscale(100%);
 }
@@ -374,14 +374,14 @@ h6 {
   position: relative;
   color: #fff;
   display: block;
-  top: 40%;
-  left: 95%;
+  top: 80%;
+  left: 90%;
   right: 0;
   bottom: 0;
 }
 
 .project3 {
-  background: url(./images/plutus.jpeg) no-repeat 0 50%;
+  background: url(./images/plutus-cover.jpg) no-repeat 0 50%;
   background-size: cover;
   filter: grayscale(100%);
 }
@@ -403,7 +403,7 @@ h6 {
   position: relative;
   color: #fff;
   display: block;
-  top: 80%;
+  top: 70%;
   left: -50%;
   right: 0;
   bottom: 0;
