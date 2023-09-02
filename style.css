@@ -312,6 +312,16 @@ h6 {
   height: 500px;
 }
 
+.project:hover {
+  cursor: pointer;
+}
+
+.project1:hover,
+.project2:hover,
+.project3:hover {
+  filter: none;
+}
+
 .project1 {
   background: url(./images/vage.png) no-repeat 10% 50%;
   background-size: cover;
