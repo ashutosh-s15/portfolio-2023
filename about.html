@@ -98,16 +98,6 @@
               <h3 class="wow fadeInUp" data-wow-delay="1.2s">about me.</h3>
               <br />
 
-              <p class="wow fadeInUp">
-                Living with passion is what I strictly adhere to. “Always do
-                what you love” how much ever hackneyed this sounds it holds
-                absolutely true. That's why I travel a lot. Not for the sole
-                reason of “loving” to travel but it helps me to get rid of the
-                world and escape into a different dimension of my own. As I am a
-                travel freak I love freezing the moments I relish. The art of
-                capturing photos is something I am always fascinated by.
-              </p>
-
               <p class="wow fadeInUp" data-wow-delay="0.2s">
                 I am a software engineer soon to be grad with a Bachelor's of
                 Technology in Computer Science. I am a continuous learner.
@@ -117,11 +107,79 @@
                 favourite aspect of it. I love building projects specially the
                 ones that can have a real-life impact.
               </p>
+              <div class="whitespace"></div>
+
+              <h4 class="wow fadeInUp">my captures & art.</h4>
+              <p class="wow fadeInUp" data-wow-delay="0.2s">
+                Living with passion is what I strictly adhere to. “Always do
+                what you love” how much ever hackneyed this sounds it holds
+                absolutely true. That's why I travel a lot. Not for the sole
+                reason of “loving” to travel but it helps me to get rid of the
+                world and escape into a different dimension of my own. As I am a
+                travel freak I love freezing the moments I relish. The art of
+                capturing photos is something I am always fascinated by. I am
+                also a big football geek and enjoys painting in my free time.
+              </p>
+              <br /><br />
             </div>
           </div>
         </div>
       </div>
       <!--------------- hero section ends here --------------->
+
+      <!-- image slider section -->
+
+      <div class="main wow fadeIn" data-wow-delay="0.5s">
+        <div class="slider">
+          <div class="slider-inner">
+            <div class="item">
+              <div class="captures"></div>
+            </div>
+            <div class="item">
+              <div class="captures"></div>
+            </div>
+            <div class="item">
+              <div class="captures"></div>
+            </div>
+            <div class="item">
+              <div class="captures"></div>
+            </div>
+            <div class="item">
+              <div class="captures"></div>
+            </div>
+            <div class="item">
+              <div class="captures"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main wow fadeIn" data-wow-delay="0.5s">
+        <div class="slider-2">
+          <div class="slider-inner">
+            <div class="item">
+              <div class="captures-2"></div>
+            </div>
+            <div class="item">
+              <div class="captures-2"></div>
+            </div>
+            <div class="item">
+              <div class="captures-2"></div>
+            </div>
+            <div class="item">
+              <div class="captures-2"></div>
+            </div>
+            <div class="item">
+              <div class="captures-2"></div>
+            </div>
+            <div class="item">
+              <div class="captures-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- image slider section -->
 
       <div class="whitespace"></div>
 
@@ -258,6 +316,102 @@
       // nav animation ends
 
       new WOW().init();
+
+      // image slider
+
+      let images = [...document.querySelectorAll(".captures")];
+      let slider = document.querySelector(".slider");
+      let sliderWidth;
+      let imageWidth;
+      let current = 0;
+      let target = 0;
+      let ease = 0.02;
+
+      window.addEventListener("resize", init);
+
+      images.forEach((img, idx) => {
+        img.style.backgroundImage = `url(./images/captures/${idx + 1}.jpg)`;
+      });
+
+      function lerp(start, end, t) {
+        return start * (1 - t) + end * t;
+      }
+
+      function setTransform(el, transform) {
+        el.style.transform = transform;
+      }
+
+      function init() {
+        sliderWidth = slider.getBoundingClientRect().width;
+        imageWidth = sliderWidth / images.length;
+        document.body.style.height = `${
+          sliderWidth - (window.innerWidth - window.innerHeight)
+        }px`;
+      }
+
+      function animate() {
+        current = parseFloat(lerp(current, target, ease).toFixed(2));
+        target = window.scrollY;
+        setTransform(slider, `translateX(-${current}px)`);
+        animateImages();
+        requestAnimationFrame(animate);
+      }
+
+      function animateImages() {
+        let ratio = current / imageWidth;
+        let intersectionRatioValue;
+
+        images.forEach((image, idx) => {
+          intersectionRatioValue = ratio - idx * 0.7;
+          setTransform(image, `translateX(${intersectionRatioValue + 70}px)`);
+        });
+      }
+
+      init();
+      animate();
+
+      let images2 = [...document.querySelectorAll(".captures-2")];
+      let slider2 = document.querySelector(".slider-2");
+      let sliderWidth2;
+      let imageWidth2;
+      let current2 = 0;
+      let target2 = 0;
+      let ease2 = 0.01;
+
+      window.addEventListener("resize", init2);
+
+      images2.forEach((img, idx) => {
+        img.style.backgroundImage = `url(./images/art/${idx + 1}.jpg)`;
+      });
+
+      function init2() {
+        sliderWidth2 = slider2.getBoundingClientRect().width;
+        imageWidth2 = sliderWidth2 / images2.length;
+        document.body.style.height = `${
+          sliderWidth2 - (window.innerWidth - window.innerHeight)
+        }px`;
+      }
+
+      function animate2() {
+        current2 = parseFloat(lerp(current2, target2, ease2).toFixed(2));
+        target2 = window.scrollY;
+        setTransform(slider2, `translateX(-${current2}px)`);
+        animateImages2();
+        requestAnimationFrame(animate2);
+      }
+
+      function animateImages2() {
+        let ratio = current2 / imageWidth2;
+        let intersectionRatioValue;
+
+        images2.forEach((image, idx) => {
+          intersectionRatioValue = ratio - idx * 0.7;
+          setTransform(image, `translateX(${intersectionRatioValue + 70}px)`);
+        });
+      }
+
+      init2();
+      animate2();
     </script>
   </body>
 </html>
