@@ -318,7 +318,8 @@ h6 {
 
 .project1:hover,
 .project2:hover,
-.project3:hover {
+.project3:hover,
+.project4:hover {
   filter: none;
 }
 
@@ -410,13 +411,23 @@ h6 {
 }
 
 .project4 {
-  background: url(https://images.unsplash.com/photo-1435685813800-51ba4ceb9c4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1785&q=80)
-    no-repeat 50% 50%;
+  background: url(./images/snipster-cover.jpg) no-repeat 50% 50%;
   background-size: cover;
+  filter: grayscale(100%);
+}
+
+.project4-img-1 {
+  background: url(./images/snipster.png) no-repeat 50% 50%;
+  background-size: contain;
+}
+
+.project4-img-2 {
+  background: url(./images/snipster-cover.jpg) no-repeat 50% 50%;
+  background-size: contain;
 }
 
 .project4::after {
-  content: "departure.";
+  content: "snipster: code snippet generator.";
   font-family: "Roboto Mono";
   font-size: 36px;
   position: relative;
