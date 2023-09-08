@@ -316,6 +316,23 @@ h6 {
   cursor: pointer;
 }
 
+.project-links {
+  margin-right: 1em;
+  padding: 0 15px;
+}
+
+.project-links p {
+  color: #45699c !important;
+}
+
+.project-links img {
+  width: 1em;
+}
+
+.project-links a:hover {
+  text-decoration: none;
+}
+
 .project1:hover,
 .project2:hover,
 .project3:hover,
